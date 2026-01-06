@@ -11,16 +11,21 @@ public class Pipe_selector_script : MonoBehaviour
 {
 
     #region variables
-    [Header("Variables")]
+    [Header("Variables / Other")]
     private GameObject pipeObject; // pipe to be instantiated 
+    [Space(2)]
+    [Header("bools")]
+    private bool pipePlaced = false;
+    private bool pipeCreated = false;
     #endregion
 
     // The list with all the pipes in it.
     public List<GameObject> pipeList;
     #region pipes
-    [SerializeField] private GameObject straightPipe;
-    [SerializeField] private GameObject curvePipe;
-    [SerializeField] private GameObject splitPipe;
+    
+    [SerializeField] private GameObject straightPipePrefab;
+    [SerializeField] private GameObject curvePipePrefab;
+    [SerializeField] private GameObject splitPipePrefab;
 
     #endregion
     #region Pipe Selection
@@ -41,16 +46,22 @@ public class Pipe_selector_script : MonoBehaviour
     // Pipe generator gets the pipe ment to be created and places it in the scene.
     private void pipeGenerator(int index)
     {
-        
+        for (int i = 0; i < index; i++)
+        {
+            pipeSelector();
+
+            GameObject newPipe = GameObject.Instantiate(pipeObject, this.transform);
+
+        }
     }
     #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created.
     void Awake()
     {
         // Adds the pipe objects to the pipeList.
-        pipeList.Add(straightPipe);
-        pipeList.Add(curvePipe);
-        pipeList.Add(splitPipe);
+        pipeList.Add(straightPipePrefab);
+        pipeList.Add(curvePipePrefab);
+        pipeList.Add(splitPipePrefab);
     }
     void Start()
     {
