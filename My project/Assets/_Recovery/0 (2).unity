@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7bc165672f2639459bbbc4e982ad83f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  scrollSpeed: 1
+  scrollSpeed: 2
 --- !u!114 &1704135963
 MonoBehaviour:
   m_ObjectHideFlags: 0
