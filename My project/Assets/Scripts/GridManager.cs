@@ -3,7 +3,6 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     private Grid<bool> grid;
-    public GameObject objectToPlace;
 
     public int expandRows = 5;
     public float expandBuffer = 1f;
@@ -16,7 +15,8 @@ public class GridManager : MonoBehaviour
     void Update()
     {
         ExpandGridIfNeeded();
-        HandlePlacement();
+
+
     }
 
     void ExpandGridIfNeeded()
@@ -35,21 +35,17 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    void HandlePlacement()
+    public void HandlePlacement(GameObject pipeToPlace)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mouseWorldPos =
-                Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 0;
 
             grid.GetXY(mouseWorldPos, out int x, out int y);
 
             Vector3 pos = grid.GetWorldPositionCentered(x, y);
-            Instantiate(objectToPlace, pos, Quaternion.identity);
+            Instantiate(pipeToPlace, pos, Quaternion.identity);
 
             grid.SetValue(x, y, true);
-        }
     }
 }
 
