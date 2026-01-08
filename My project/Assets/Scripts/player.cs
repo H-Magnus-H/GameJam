@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public int cardsInHand = 0;
+    public int cardsInHand;
 
     void Start()
     {
