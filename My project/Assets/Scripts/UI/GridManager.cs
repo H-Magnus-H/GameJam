@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class GridManager : MonoBehaviour
@@ -45,10 +46,16 @@ public class GridManager : MonoBehaviour
 
             grid.GetXY(mouseWorldPos, out int x, out int y);
 
+            Pipe_Script prevPipe;
+            List<Pipe_Script> posDirections = 
+
             Vector3 pos = grid.GetWorldPositionCentered(x, y);
             Instantiate(objectToPlace, pos, Quaternion.identity);
 
             grid.SetValue(x, y, true);
+
+
+
         }
     }
 }
