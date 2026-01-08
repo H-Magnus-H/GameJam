@@ -41,4 +41,8 @@ public class Pipe : MonoBehaviour
         return p;
     }
 
+    private void Update()
+    {
+    }
+
 }
