@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 4735401978045374118}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: -1, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,6 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 802832656758260756}
+  - component: {fileID: 4961633824769171751}
   m_Layer: 0
   m_Name: straightPipe
   m_TagString: Untagged
@@ -153,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 4915584649517090420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -162,6 +163,19 @@ Transform:
   - {fileID: 6084212335610417076}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4961633824769171751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4915584649517090420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953c5843545744e429c17b9fdafac062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  openings: 0000000002000000
 --- !u!1 &5950449106189699949
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,14 +186,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6084212335610417076}
   - component: {fileID: 5265823272771845425}
-  - component: {fileID: 2725085355165843166}
   m_Layer: 0
   m_Name: innOutDetectorDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6084212335610417076
 Transform:
   m_ObjectHideFlags: 0
@@ -241,20 +254,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &2725085355165843166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5950449106189699949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aad4ba65b18481459ea89add143edb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::pipe_connector_script
-  pipeColliderUp: {fileID: 4019701325147699040}
-  pipeColliderDown: {fileID: 5265823272771845425}
 --- !u!1 &5985026004875637549
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 5985026004875637549}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,7 +371,7 @@ Transform:
   m_GameObject: {fileID: 7498375546095975962}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -463,7 +462,7 @@ Transform:
   m_GameObject: {fileID: 7820085110345232357}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -554,7 +553,7 @@ Transform:
   m_GameObject: {fileID: 8433368856255370247}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: -2, z: 0}
+  m_LocalPosition: {x: 1, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -629,14 +628,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3676521149997414322}
   - component: {fileID: 4019701325147699040}
-  - component: {fileID: 1446659861692397686}
   m_Layer: 0
   m_Name: innOutDetectorUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3676521149997414322
 Transform:
   m_ObjectHideFlags: 0
@@ -698,20 +696,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1446659861692397686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8585058489993843503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aad4ba65b18481459ea89add143edb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  pipeColliderUp: {fileID: 0}
-  pipeColliderDown: {fileID: 0}
 --- !u!1 &9136933790914113132
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +722,7 @@ Transform:
   m_GameObject: {fileID: 9136933790914113132}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: -1, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

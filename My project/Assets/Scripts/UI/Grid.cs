@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Grid<TGridObject>
+public class Grid<TGridObject> : MonoBehaviour
 {
     private int width;
     private int height;
