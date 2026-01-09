@@ -46,78 +46,78 @@ public class Pipe_Script : MonoBehaviour
     // sprite changer 
     #region Sprite changer 
 
-    [Header("Block Stages (4 Sprites)")]
-    [SerializeField] private Sprite[] stages = new Sprite[4];
+    //[Header("Block Stages (4 Sprites)")]
+    //[SerializeField] private Sprite[] stages = new Sprite[4];
 
-    [SerializeField] private float delayBetweenStages = 8f;
-    [SerializeField] private float delayBetweenTimeChange = 0.04f;
+    //[SerializeField] private float delayBetweenStages = 8f;
+    //[SerializeField] private float delayBetweenTimeChange = 0.04f;
 
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
 
-    //Queue management
-    private static int nextPlacementIndex = 0;
-    private static int activeIndex = 0;
-    private int myIndex;
+    ////Queue management
+    //private static int nextPlacementIndex = 0;
+    //private static int activeIndex = 0;
+    //private int myIndex;
 
-    private void Awake()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+    //private void Awake()
+    //{
+    //    spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Safety check
-        if (stages.Length != 4)
-        {
-            Debug.LogError($"{name} does not have exactly 4 sprites assigned.");
-            enabled = false;
-            return;
-        }
+    //    // Safety check
+    //    if (stages.Length != 4)
+    //    {
+    //        Debug.LogError($"{name} does not have exactly 4 sprites assigned.");
+    //        enabled = false;
+    //        return;
+    //    }
 
-        spriteRenderer.sprite = stages[0];
+    //    spriteRenderer.sprite = stages[0];
 
-        // Assign block placed order
-        myIndex = nextPlacementIndex;
-        nextPlacementIndex++;
-    }
+    //    // Assign block placed order
+    //    myIndex = nextPlacementIndex;
+    //    nextPlacementIndex++;
+    //}
 
-    //Stars the coroutine
-    private void Start()
-    {
-        StartCoroutine(WaitAndPlayStages());
-        StartCoroutine(CountDownStage());
-    }
+    ////Stars the coroutine
+    //private void Start()
+    //{
+    //    StartCoroutine(WaitAndPlayStages());
+    //    StartCoroutine(CountDownStage());
+    //}
 
-    private IEnumerator WaitAndPlayStages()
-    {
-        //Wait for turn
-        while (myIndex != activeIndex)
-            yield return null;
+    //private IEnumerator WaitAndPlayStages()
+    //{
+    //    //Wait for turn
+    //    while (myIndex != activeIndex)
+    //        yield return null;
 
-        //Loop through sprites 
-        for (int i = 1; i < stages.Length; i++)
-        {
-            yield return new WaitForSeconds(delayBetweenStages);
-            spriteRenderer.sprite = stages[i];
-        }
+    //    //Loop through sprites 
+    //    for (int i = 1; i < stages.Length; i++)
+    //    {
+    //        yield return new WaitForSeconds(delayBetweenStages);
+    //        spriteRenderer.sprite = stages[i];
+    //    }
 
-        //Next placed block starts 
-        activeIndex++;
-    }
-    private IEnumerator CountDownStage()
-    {
-        //Wait for turn
-        while (myIndex != activeIndex)
-            yield return null;
+    //    //Next placed block starts 
+    //    activeIndex++;
+    //}
+    //private IEnumerator CountDownStage()
+    //{
+    //    //Wait for turn
+    //    while (myIndex != activeIndex)
+    //        yield return null;
 
-        //Loop through sprites 
+    //    //Loop through sprites 
 
-        yield return new WaitForSeconds(delayBetweenTimeChange);
-
-
-        //Next placed block starts 
-        activeIndex++;
-    }
+    //    yield return new WaitForSeconds(delayBetweenTimeChange);
 
 
-    // end of sprite changer 
+    //    //Next placed block starts 
+    //    activeIndex++;
+    //}
+
+
+    //// end of sprite changer 
     #endregion
 
 

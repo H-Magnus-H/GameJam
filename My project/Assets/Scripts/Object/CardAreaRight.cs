@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class CardAreaRight : MonoBehaviour, ICardDropArea
 {
+    public card cardInPlace;
     public void OnCardDrop(card card1)
     {
-        card1.transform.position = transform.position;
-        Debug.Log("Card was sropped in the right area");
+        if (cardInPlace == null)
+        {
+            card1.transform.position = transform.position;
+            Debug.Log("Card was sropped in the right area");
+            cardInPlace = card1;
+        }
+
     }
     //[SerializeField] private GameObject objectToSpawn;
 

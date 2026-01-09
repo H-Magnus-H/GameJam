@@ -1,6 +1,7 @@
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
-public class Grid<TGridObject> : MonoBehaviour
+public class Grid<TGridObject> 
 {
     private int width;
     private int height;
@@ -8,7 +9,7 @@ public class Grid<TGridObject> : MonoBehaviour
     private TGridObject[,] gridArray;
     private Vector3 originPosition;
 
-    public Grid(int width, int height, float cellSize, Vector3 originPosition)
+    public Grid(int width, int height, float cellSize, Vector3 originPosition, TGridObject startObject)
     {
         this.width = width;
         this.height = height;
@@ -16,6 +17,7 @@ public class Grid<TGridObject> : MonoBehaviour
         this.originPosition = originPosition;
 
         gridArray = new TGridObject[width, height];
+        gridArray[0, 0] = startObject;
     }
 
   
@@ -50,6 +52,7 @@ public class Grid<TGridObject> : MonoBehaviour
     {
         if (x >= 0 && y >= 0 && x < width && y < height)
         {
+            Debug.Log("Hey we changed it");
             gridArray[x, y] = value;
         }
     }

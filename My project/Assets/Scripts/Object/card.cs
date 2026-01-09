@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[RequireComponent (typeof(Collider2D))]
 public class card : MonoBehaviour
 {
     private Collider2D coll;
@@ -15,10 +15,13 @@ public class card : MonoBehaviour
     {
         startDragPosition = transform.position;
         transform.position = GetMousePositionInWorldSpace();
+        
+
     }
     private void OnMouseDrag()
     {
         transform.position = GetMousePositionInWorldSpace();
+        
     }
     private void OnMouseUp()
     {
@@ -29,9 +32,17 @@ public class card : MonoBehaviour
         {
             cardDropArea.OnCardDrop(this);  
         }
-        else
+        else if (hitCollider  != null && hitCollider.TryGetComponent<CanvasRenderer>(out _))
         {
             transform.position = startDragPosition;
+        }
+        else
+        {
+            if (!GridManager.instance.HandlePlacement(this))
+            {
+                transform.position = startDragPosition;
+            }
+            //cardDropArea 
         }
     }
 
@@ -40,5 +51,10 @@ public class card : MonoBehaviour
         Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         p.z = 0f;
         return p;
+    }
+    private void OnDestroy()
+    {
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        gameObject.GetComponent<Pipe_Script>().enabled = true;
     }
 }
